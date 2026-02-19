@@ -227,31 +227,39 @@ address {
     transition: all 0.4s ease;
 }
 
-.navbar.scrolled {
+.navbar.scrolled,
+.navbar-static {
     background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
 }
 
-.navbar.scrolled .logo-text {
+.navbar.scrolled .logo-text,
+.navbar-static .logo-text {
     color: var(--color-text-dark);
 }
 
-.navbar.scrolled .logo-inc {
+.navbar.scrolled .logo-inc,
+.navbar-static .logo-inc {
     color: var(--color-text);
 }
 
 .navbar.scrolled .nav-links>a,
-.navbar.scrolled .dropdown>.dropdown-trigger {
+.navbar.scrolled .dropdown>.dropdown-trigger,
+.navbar-static .nav-links>a,
+.navbar-static .dropdown>.dropdown-trigger {
     color: var(--color-text);
 }
 
 .navbar.scrolled .nav-links>a:hover,
-.navbar.scrolled .dropdown>.dropdown-trigger:hover {
+.navbar.scrolled .dropdown>.dropdown-trigger:hover,
+.navbar-static .nav-links>a:hover,
+.navbar-static .dropdown>.dropdown-trigger:hover {
     color: var(--color-primary);
 }
 
-.navbar.scrolled .hamburger-line {
+.navbar.scrolled .hamburger-line,
+.navbar-static .hamburger-line {
     background: var(--color-text-dark);
 }
 
