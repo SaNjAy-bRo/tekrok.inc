@@ -1,5 +1,5 @@
 /* TEKROK INC - Premium Agency Styles */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
     --color-bg: #ffffff;
@@ -12,8 +12,8 @@
     --color-border: #e2e8f0;
     --color-dark-bg: #0f172a;
 
-    --font-heading: 'Space Grotesk', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
 
     --container-width: 1240px;
     --section-padding: 100px 0;
@@ -437,7 +437,7 @@ address {
     width: 30px;
     height: 22px;
     position: relative;
-    z-index: 1010;
+    z-index: 1060;
     padding: 0;
 }
 
