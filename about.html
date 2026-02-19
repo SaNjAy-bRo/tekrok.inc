@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — TEKROK INC</title>
+    <meta name="description"
+        content="Learn more about TEKROK INC, a leading software development company specializing in web development and IT solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR (Reused) ===== -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" aria-label="TEKROK INC Home">
+                <svg class="logo-svg" viewBox="0 0 40 40" aria-hidden="true">
+                    <path d="M20 2L2 12V28L20 38L38 28V12L20 2Z" fill="currentColor" />
+                    <path d="M20 10V30M10 16L30 16" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+                </svg>
+                <span class="logo-text">TEKROK <span class="logo-inc">INC</span></span>
+            </a>
+
+            <nav class="nav-links" id="main-nav">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-trigger">
+                        Services <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="javascript:void(0)"><i class="fa-solid fa-globe"></i> Web Development</a>
+                        <a href="javascript:void(0)"><i class="fa-solid fa-laptop-code"></i> Software Development</a>
+                        <a href="javascript:void(0)"><i class="fa-solid fa-brain"></i> Artificial Intelligence</a>
+                        <a href="javascript:void(0)"><i class="fa-solid fa-headset"></i> IT Support</a>
+                    </div>
+                </div>
+                <a href="about.html" class="active">About</a>
+                <a href="javascript:void(0)">Careers</a>
+                <a href="#contact" class="btn-nav-cta">Contact Us</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Mobile Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+
+    <main>
+        <!-- ===== HERO SECTION ===== -->
+        <section class="section about-hero">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center;">
+                    <!-- Text Content -->
+                    <div class="reveal-up">
+                        <h1 class="hero-title">Innovative Software<br><span class="text-accent">Solutions</span> for
+                            Your Business</h1>
+                        <p class="section-desc">
+                            TEKROK INC is a leading software development company, specializing in web development and IT
+                            Support to help businesses thrive in the Web landscape.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#contact" class="btn btn-primary">Contact Us</a>
+                        </div>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="about-image reveal-up delay-1">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+                            alt="Team working on software">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== OUR PROJECTS HEADER ===== -->
+        <div class="container reveal">
+            <h2 class="section-title">Our Projects</h2>
+            <p>Explore our diverse range of software and web development projects.</p>
+        </div>
+
+        <!-- ===== INNOVATIVE SOLUTIONS (Image Left, Text Right) ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center; gap: 60px;">
+                    <!-- Image -->
+                    <div class="about-image reveal delay-1">
+                        <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=2070&auto=format&fit=crop"
+                            alt="Code on screen">
+                    </div>
+
+                    <!-- Text -->
+                    <div class="highlight-box reveal">
+                        <h3>Innovative Solutions</h3>
+                        <p>We deliver innovative software solutions tailored to meet client needs effectively. Our team
+                            leverages cutting-edge technologies to build scalable, secure, and high-performance
+                            applications that drive business growth.</p>
+                        <ul class="service-features" style="margin-top: 20px;">
+                            <li><i class="fa-solid fa-check"></i> Custom Software Architecture</li>
+                            <li><i class="fa-solid fa-check"></i> Agile Development Process</li>
+                            <li><i class="fa-solid fa-check"></i> Cloud-Native Integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SUPPORT EXCELLENCE (Text Left, Image Right) ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center; gap: 60px;">
+                    <!-- Text -->
+                    <div class="highlight-box reveal order-mobile-last">
+                        <h3>Support Excellence</h3>
+                        <p>End-to-end support for your projects from development to deployment everyday till your
+                            project is ready to go. We believe in building long-term partnerships, not just delivering
+                            code.</p>
+                        <div style="margin-top: 24px;">
+                            <div class="intro-stat" style="margin-bottom: 16px;">
+                                <strong style="color: var(--color-primary); font-size: 2rem;">24/7</strong>
+                                <span>Active Monitoring</span>
+                            </div>
+                            <p class="small-text">Our dedicated support team is always just a call away.</p>
+                        </div>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="about-image reveal delay-1 order-mobile-first">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"
+                            alt="Workspace with laptop">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIAL FEATURE ===== -->
+        <section class="section testimonial-featured reveal-up">
+            <div class="container">
+                <div class="stars" style="margin-bottom: 24px;">★★★★★</div>
+                <h3>"TEKROK delivered exceptional software solutions that transformed our business. Their expertise in
+                    web development and support truly sets them apart from the competition."</h3>
+
+                <div class="client-info" style="justify-content: center;">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
+                        alt="John Doe" style="border: 2px solid white;">
+                    <div style="text-align: left;">
+                        <strong style="color: white; display: block;">John Doe</strong>
+                        <span style="color: rgba(255,255,255,0.8);">CEO, TechInnovate</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA ===== -->
+        <section class="cta-section">
+            <div class="container cta-content reveal">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Let's discuss how TEKROK INC can engineer your digital future.</p>
+                <a href="#contact" class="btn btn-cta-white">Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER (Reused) ===== -->
+    <footer id="contact" class="footer-section">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="footer-logo">TEKROK INC<span class="highlight">.</span></a>
+                    <p>Expert software solutions for your business. Building the future, one line of code at a time.</p>
+                    <div class="social-links">
+                        <a href="javascript:void(0)" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="javascript:void(0)" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="javascript:void(0)" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="javascript:void(0)" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <!-- ... Footer links same as index ... -->
+                <nav class="footer-col">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="javascript:void(0)">Web Development</a></li>
+                        <li><a href="javascript:void(0)">Software Engineering</a></li>
+                        <li><a href="javascript:void(0)">AI Solutions</a></li>
+                        <li><a href="javascript:void(0)">IT Consultancy</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="javascript:void(0)">Careers</a></li>
+                        <li><a href="javascript:void(0)">Blog</a></li>
+                        <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+                <address class="footer-col">
+                    <h5>Contact</h5>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-location-dot"></i> 5 Independence Way, Princeton NJ</li>
+                        <li><a href="mailto:contact@tekrok.com"><i class="fa-solid fa-envelope"></i>
+                                contact@tekrok.com</a></li>
+                        <li><a href="tel:+12015550123"><i class="fa-solid fa-phone"></i> +1 (201) 555-0123</a></li>
+                    </ul>
+                </address>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TEKROK INC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
