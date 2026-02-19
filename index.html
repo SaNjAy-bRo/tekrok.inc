@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/design-system.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -42,7 +43,6 @@
                         <a href="javascript:void(0)"><i class="fa-solid fa-headset"></i> IT Support</a>
                     </div>
                 </div>
-                <a href="#projects">Projects</a>
                 <a href="#about">About</a>
                 <a href="javascript:void(0)">Careers</a>
                 <a href="#contact" class="btn-nav-cta">Contact Us</a>
@@ -80,7 +80,7 @@
             </div>
         </section>
 
-        <!-- ===== INTRO / ABOUT BRIEF — NEW SECTION ===== -->
+        <!-- ===== INTRO / ABOUT BRIEF ===== -->
         <section id="intro" class="intro-section">
             <div class="container intro-grid">
                 <div class="intro-content reveal">
@@ -255,52 +255,6 @@
             </div>
         </section>
 
-        <!-- ===== PROJECTS ===== -->
-        <section id="projects" class="projects-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="overline">Portfolio</span>
-                    <h2>Recent Works</h2>
-                    <p class="section-desc">Innovative projects showcasing our cutting-edge expertise.</p>
-                </div>
-                <div class="projects-grid">
-                    <article class="project-card reveal">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"
-                                alt="Financial Dashboard" loading="lazy">
-                            <div class="project-overlay"><span class="project-tag">FinTech</span></div>
-                        </div>
-                        <div class="project-info">
-                            <h4>FinTech Dashboard</h4>
-                            <p>Financial Data Visualization</p>
-                        </div>
-                    </article>
-                    <article class="project-card reveal">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-                                alt="Healthcare App" loading="lazy">
-                            <div class="project-overlay"><span class="project-tag">Healthcare</span></div>
-                        </div>
-                        <div class="project-info">
-                            <h4>HealthStream App</h4>
-                            <p>Patient Management System</p>
-                        </div>
-                    </article>
-                    <article class="project-card reveal">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
-                                alt="E-commerce Platform" loading="lazy">
-                            <div class="project-overlay"><span class="project-tag">E-Commerce</span></div>
-                        </div>
-                        <div class="project-info">
-                            <h4>EcoCom Platform</h4>
-                            <p>Sustainable Shopping Solution</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <!-- ===== STATS ===== -->
         <aside id="about" class="stats-section">
             <div class="container">
@@ -325,22 +279,96 @@
             </div>
         </aside>
 
-        <!-- ===== TESTIMONIAL ===== -->
-        <section class="testimonial-section">
+        <!-- ===== TESTIMONIALS CAROUSEL ===== -->
+        <section id="testimonials" class="testimonial-section">
             <div class="container">
                 <div class="section-header reveal">
                     <span class="overline">Testimonials</span>
                     <h2>What Our Clients Say</h2>
+                    <p class="section-desc">Trusted by businesses worldwide to deliver exceptional results.</p>
                 </div>
-                <div class="testimonial-content reveal">
-                    <div class="stars">★★★★★</div>
-                    <blockquote>"TEKROK INC delivered exceptional software solutions that transformed our business
-                        operations. Their team's expertise and dedication to quality is unmatched!"</blockquote>
-                    <div class="client-info">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop"
-                            alt="Mary Ann - Director at TechCorp">
-                        <div><strong>Mary Ann</strong><span>Director, TechCorp</span></div>
+
+                <div class="testimonial-carousel reveal" id="testimonialCarousel">
+                    <div class="carousel-track" id="carouselTrack">
+
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>"TEKROK INC delivered exceptional software solutions that transformed our
+                                business operations. Their team's expertise and dedication to quality is unmatched!"
+                            </blockquote>
+                            <div class="client-info">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
+                                    alt="Mary Ann">
+                                <div><strong>Mary Ann</strong><span>Director, TechCorp</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>"The AI solutions they built for our analytics platform exceeded every
+                                expectation. Our data processing is now 10x faster and incredibly accurate."
+                            </blockquote>
+                            <div class="client-info">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop"
+                                    alt="James Wilson">
+                                <div><strong>James Wilson</strong><span>CTO, DataFlow Inc</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>"From initial concept to final deployment, TEKROK INC demonstrated outstanding
+                                professionalism. Our e-commerce platform now handles 3x more traffic."</blockquote>
+                            <div class="client-info">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop"
+                                    alt="Sarah Chen">
+                                <div><strong>Sarah Chen</strong><span>CEO, ShopVista</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>"Their IT support team is phenomenal — 24/7 response, zero downtime. They
+                                migrated our entire infrastructure to the cloud without a single hiccup."</blockquote>
+                            <div class="client-info">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
+                                    alt="Robert Mitchell">
+                                <div><strong>Robert Mitchell</strong><span>COO, FinanceHub</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 5 -->
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>"We needed a custom CRM built from scratch, and TEKROK INC delivered it in
+                                record time. The system is intuitive, fast, and our sales team loves it."</blockquote>
+                            <div class="client-info">
+                                <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=200&auto=format&fit=crop"
+                                    alt="Priya Sharma">
+                                <div><strong>Priya Sharma</strong><span>VP Sales, NexGen</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 6 -->
+                        <div class="testimonial-card">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>"Working with TEKROK INC felt like having an extension of our own team. Their
+                                communication, quality, and speed of delivery are absolutely top-tier."</blockquote>
+                            <div class="client-info">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
+                                    alt="David Park">
+                                <div><strong>David Park</strong><span>Founder, CloudBridge</span></div>
+                            </div>
+                        </div>
+
                     </div>
+
+                    <!-- Carousel Dots -->
+                    <div class="carousel-dots" id="carouselDots"></div>
                 </div>
             </div>
         </section>

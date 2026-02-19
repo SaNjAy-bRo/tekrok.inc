@@ -589,7 +589,7 @@ address {
 }
 
 /* ============================================================
-   INTRO / ABOUT BRIEF — NEW SECTION
+   INTRO / ABOUT BRIEF
    ============================================================ */
 .intro-section {
     padding: 120px 0;
@@ -835,80 +835,6 @@ address {
 }
 
 /* ============================================================
-   PROJECTS
-   ============================================================ */
-.projects-section {
-    padding: var(--section-padding);
-    background: var(--color-bg-alt);
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-}
-
-.project-card {
-    background: white;
-    border-radius: var(--radius);
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-    transition: var(--transition);
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-}
-
-.project-image {
-    height: 260px;
-    overflow: hidden;
-    position: relative;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-.project-card:hover .project-image img {
-    transform: scale(1.08);
-}
-
-.project-overlay {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-}
-
-.project-tag {
-    background: var(--color-primary);
-    color: white;
-    padding: 6px 14px;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.project-info {
-    padding: 24px;
-}
-
-.project-info h4 {
-    margin-bottom: 6px;
-}
-
-.project-info p {
-    font-size: 0.9rem;
-    color: var(--color-text);
-}
-
-/* ============================================================
    STATS
    ============================================================ */
 .stats-section {
@@ -938,45 +864,73 @@ address {
 }
 
 /* ============================================================
-   TESTIMONIAL
+   TESTIMONIALS CAROUSEL
    ============================================================ */
 .testimonial-section {
     padding: var(--section-padding);
-    background: var(--color-bg);
+    background: var(--color-bg-alt);
+    overflow: hidden;
 }
 
-.testimonial-content {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
+.testimonial-carousel {
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 28px;
+    will-change: transform;
+}
+
+.testimonial-card {
+    min-width: calc(33.333% - 19px);
+    background: white;
+    border-radius: var(--radius);
+    padding: 40px 32px;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+    flex-shrink: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
 }
 
 .stars {
     color: var(--color-primary);
-    font-size: 1.5rem;
-    margin-bottom: 24px;
-    letter-spacing: 4px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
 }
 
 blockquote {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.05rem;
     color: var(--color-text-dark);
-    margin-bottom: 32px;
-    line-height: 1.5;
+    margin-bottom: 28px;
+    line-height: 1.7;
     font-weight: 500;
+    font-style: italic;
+    flex: 1;
 }
 
 .client-info {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 14px;
 }
 
 .client-info img {
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--color-primary);
@@ -985,11 +939,42 @@ blockquote {
 .client-info strong {
     display: block;
     color: var(--color-text-dark);
+    font-size: 0.95rem;
 }
 
 .client-info span {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--color-text);
+}
+
+/* Carousel Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 36px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-border);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    background: var(--color-primary);
+    opacity: 0.6;
+}
+
+.carousel-dot.active {
+    background: var(--color-primary);
+    width: 32px;
+    border-radius: 6px;
 }
 
 /* ============================================================
@@ -1176,13 +1161,14 @@ blockquote {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
+    }
+
+    /* Carousel: show 2 cards on tablet */
+    .testimonial-card {
+        min-width: calc(50% - 14px);
     }
 }
 
@@ -1352,9 +1338,9 @@ blockquote {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Projects */
-    .projects-grid {
-        grid-template-columns: 1fr;
+    /* Carousel: show 1 card on mobile */
+    .testimonial-card {
+        min-width: 100%;
     }
 
     /* Footer */
@@ -1364,7 +1350,7 @@ blockquote {
     }
 
     blockquote {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 }
 
@@ -1413,6 +1399,10 @@ blockquote {
     }
 
     blockquote {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
+    }
+
+    .testimonial-card {
+        padding: 28px 20px;
     }
 }
