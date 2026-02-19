@@ -1,129 +1,192 @@
+/**
+ * TEKROK INC - Main Application JS
+ * Handles: Mobile Menu, Navbar Scroll, Dropdown, Smooth Scroll, Reveal Animations, Stats Counter
+ */
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+    // ===== SELECTORS =====
+    const navbar = document.getElementById('navbar');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('main-nav');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
 
-    function toggleMenu() {
-        navLinks.classList.toggle('active');
-        mobileOverlay.classList.toggle('active');
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    // ===== MOBILE MENU =====
+    function openMenu() {
+        navLinks.classList.add('active');
+        menuToggle.classList.add('active');
+        if (mobileOverlay) mobileOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 
-        // Change icon based on state
-        const icon = menuToggle.querySelector('i');
-        if (navLinks.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-xmark');
-        } else {
-            icon.classList.remove('fa-xmark');
-            icon.classList.add('fa-bars');
-        }
+    function closeMenu() {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+        if (mobileOverlay) mobileOverlay.classList.remove('active');
+        document.body.style.overflow = '';
     }
 
     if (menuToggle) {
         menuToggle.addEventListener('click', (e) => {
             e.stopPropagation();
-            toggleMenu();
+            if (navLinks.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
     }
 
     if (mobileOverlay) {
-        mobileOverlay.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) toggleMenu();
-        });
+        mobileOverlay.addEventListener('click', closeMenu);
     }
 
-    // Mobile Dropdown Accordion
-    const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
-    dropdownTriggers.forEach(trigger => {
-        trigger.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                // Prevent anchor jump for dropdown triggers on mobile
-                e.preventDefault();
-                e.stopPropagation();
+    // Close menu on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeMenu();
+            // Close all dropdowns
+            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+        }
+    });
 
-                const container = trigger.closest('.dropdown-container');
-                container.classList.toggle('active');
-            }
+    // ===== DROPDOWN (Desktop hover + Mobile click) =====
+    const isMobile = () => window.innerWidth <= 768;
+
+    dropdownTriggers.forEach(trigger => {
+        const dropdown = trigger.closest('.dropdown');
+
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Close other dropdowns
+            document.querySelectorAll('.dropdown').forEach(d => {
+                if (d !== dropdown) d.classList.remove('open');
+            });
+
+            dropdown.classList.toggle('open');
         });
     });
 
-    // Smooth Scrolling for Anchor Links
+    // Desktop: close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+        }
+    });
+
+    // Desktop: hover open/close (only on desktop)
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', () => {
+            if (!isMobile()) dropdown.classList.add('open');
+        });
+        dropdown.addEventListener('mouseleave', () => {
+            if (!isMobile()) dropdown.classList.remove('open');
+        });
+    });
+
+    // ===== NAVBAR SCROLL EFFECT =====
+    function handleNavScroll() {
+        if (window.scrollY > 80) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+
+    if (navbar) {
+        window.addEventListener('scroll', handleNavScroll, { passive: true });
+        handleNavScroll(); // Run on load
+    }
+
+    // ===== SMOOTH SCROLLING =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            // Skip for mobile dropdown triggers as they are handled above
-            if (window.innerWidth <= 768 && this.classList.contains('dropdown-trigger')) return;
-
             const targetId = this.getAttribute('href');
-            if (targetId === '#' || targetId === 'javascript:void(0)') {
-                e.preventDefault();
-                return;
-            }
+            if (targetId === '#' || !targetId.startsWith('#')) return;
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 e.preventDefault();
-                // Close menu if open
-                if (navLinks.classList.contains('active')) toggleMenu();
+                closeMenu();
+
+                const navHeight = navbar ? navbar.offsetHeight : 80;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
 
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Offset for fixed header
+                    top: targetPosition,
                     behavior: 'smooth'
                 });
             }
         });
     });
 
-    // Scroll Reveal Animation (Slide Up)
-    const revealElements = document.querySelectorAll('.reveal');
+    // ===== SCROLL REVEAL ANIMATION =====
+    const revealElements = document.querySelectorAll('.reveal, .reveal-up');
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                // Optional: Stop observing once revealed
-                // observer.unobserve(entry.target);
-            }
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
         });
-    }, {
-        root: null,
-        threshold: 0.1, // Trigger when 10% visible
-        rootMargin: "0px"
-    });
 
-    revealElements.forEach(el => {
-        revealObserver.observe(el);
-    });
+        revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+        // Fallback: show everything if IntersectionObserver is not supported
+        revealElements.forEach(el => el.classList.add('active'));
+    }
 
-    // Stats Counter Animation
+    // ===== STATS COUNTER ANIMATION =====
     const statsSection = document.querySelector('.stats-section');
-    const statsItems = document.querySelectorAll('.stat-item h3');
-    let counted = false;
+    let statsCounted = false;
 
     if (statsSection) {
         const statsObserver = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting && !counted) {
-                statsItems.forEach(item => {
-                    const targetText = item.innerText;
-                    const targetValue = parseInt(targetText.replace(/\D/g, ''));
-                    const suffix = targetText.replace(/[0-9]/g, '');
+            if (entries[0].isIntersecting && !statsCounted) {
+                statsCounted = true;
+                const statValues = statsSection.querySelectorAll('.stat-item h3');
 
-                    let startValue = 0;
-                    let duration = 2000;
-                    let counter = setInterval(() => {
-                        startValue += Math.ceil(targetValue / (duration / 20));
-                        if (startValue >= targetValue) {
-                            item.innerText = targetValue + suffix;
-                            clearInterval(counter);
+                statValues.forEach(item => {
+                    const finalText = item.innerText;
+                    const numericValue = parseInt(finalText.replace(/\D/g, ''));
+                    const suffix = finalText.replace(/[0-9]/g, '');
+
+                    if (isNaN(numericValue)) return;
+
+                    let currentValue = 0;
+                    const duration = 2000;
+                    const increment = Math.ceil(numericValue / (duration / 16));
+                    const startTime = performance.now();
+
+                    function updateCounter(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+
+                        // Ease out cubic
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        currentValue = Math.round(eased * numericValue);
+
+                        item.innerText = currentValue + suffix;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
                         } else {
-                            item.innerText = startValue + suffix;
+                            item.innerText = finalText;
                         }
-                    }, 20);
+                    }
+
+                    requestAnimationFrame(updateCounter);
                 });
-                counted = true;
             }
-        });
+        }, { threshold: 0.3 });
+
         statsObserver.observe(statsSection);
     }
 });

@@ -4,226 +4,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tekrok Inc. - Innovative Software Solutions</title>
+    <title>TEKROK INC — Innovative Software Solutions</title>
     <meta name="description"
-        content="Tekrok Inc. delivers tailored software solutions to enhance your business performance and drive growth.">
-    <!-- Google Fonts: Space Grotesk & DM Sans -->
+        content="TEKROK INC delivers tailored software solutions, web development, AI, and IT consulting to drive your business forward.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
 
-    <!-- Header Navigation -->
-    <header class="navbar">
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo" aria-label="Tekrok Home">
-                <span class="logo-icon" aria-hidden="true"><i class="fa-solid fa-layer-group"></i></span>
-                Tekrok<span class="highlight">.</span>
+            <a href="javascript:void(0)" class="logo" aria-label="TEKROK INC Home">
+                <svg class="logo-svg" viewBox="0 0 40 40" aria-hidden="true">
+                    <path d="M20 2L2 12V28L20 38L38 28V12L20 2Z" fill="currentColor" />
+                    <path d="M20 10V30M10 16L30 16" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+                </svg>
+                <span class="logo-text">TEKROK <span class="logo-inc">INC</span></span>
             </a>
-            <nav class="nav-links" aria-label="Main Navigation" id="main-nav">
-                <a href="#hero" class="active">Home</a>
-                <div class="nav-item dropdown-container">
-                    <a href="javascript:void(0)" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-                        Services <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;" aria-hidden="true"></i>
+
+            <nav class="nav-links" id="main-nav">
+                <a href="#hero">Home</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-trigger">
+                        Services <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
                     </a>
-                    <div class="dropdown-menu" role="menu">
-                        <a href="javascript:void(0)" role="menuitem">Artificial Intelligence</a>
-                        <a href="javascript:void(0)" role="menuitem">Web Development</a>
-                        <a href="javascript:void(0)" role="menuitem">Software Development</a>
+                    <div class="dropdown-menu">
+                        <a href="javascript:void(0)"><i class="fa-solid fa-globe"></i> Web Development</a>
+                        <a href="javascript:void(0)"><i class="fa-solid fa-laptop-code"></i> Software Development</a>
+                        <a href="javascript:void(0)"><i class="fa-solid fa-brain"></i> Artificial Intelligence</a>
+                        <a href="javascript:void(0)"><i class="fa-solid fa-headset"></i> IT Support</a>
                     </div>
                 </div>
+                <a href="#projects">Projects</a>
                 <a href="#about">About</a>
                 <a href="javascript:void(0)">Careers</a>
-                <a href="#contact">Contact</a>
+                <a href="#contact" class="btn-nav-cta">Contact Us</a>
             </nav>
-            <button class="menu-toggle" aria-label="Toggle Mobile Menu" aria-controls="main-nav">
-                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Mobile Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
             </button>
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay" aria-hidden="true"></div>
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
 
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section" aria-label="Introduction">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>
-                        <span class="text-reveal-wrapper">
-                            <span class="text-reveal-content">Tekrok Brings Innovative</span>
-                        </span>
-                        <span class="text-reveal-wrapper">
-                            <span class="text-reveal-content text-gradient">Software Solutions</span>
-                        </span>
-                        <span class="text-reveal-wrapper">
-                            <span class="text-reveal-content"
-                                style="font-size: 0.7em; display:block; margin-top: 10px; opacity: 0; animation-delay: 0.3s; animation-fill-mode: forwards; animation-name: slideUpText;">for
-                                Your Business</span>
-                        </span>
-                    </h1>
-                    <p class="hero-subhead">Transforming Ideas into Software Solutions with Excellence.</p>
-                    <div class="hero-cta-wrapper">
-                        <a href="#contact" class="btn btn-primary">Get Started</a>
-                    </div>
+    <main>
+
+        <!-- ===== HERO — MINIMAL, CINEMATIC ===== -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg-image"></div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-inner">
+                <h1 class="hero-title reveal-up">
+                    Innovative Software<br>Solutions for <span class="text-accent">Businesses</span>
+                </h1>
+                <p class="hero-tagline reveal-up delay-1">Transforming ideas into powerful digital experiences.</p>
+                <div class="hero-actions reveal-up delay-2">
+                    <a href="#contact" class="btn btn-primary">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#intro" class="btn btn-ghost">Learn More</a>
                 </div>
+            </div>
+            <div class="hero-scroll-indicator reveal-up delay-3">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
 
-                <!-- Hero Feature Grid (3 Columns) -->
-                <div class="hero-grid reveal">
-                    <!-- Column 1: Image -->
-                    <div class="hero-card image-card"
-                        style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop');">
-                        <div class="card-overlay"></div>
-                    </div>
-
-                    <!-- Column 2: Text Box -->
-                    <article class="hero-card text-card dark-bg">
-                        <div class="icon-box" aria-hidden="true">
-                            <i class="fa-solid fa-code"></i>
+        <!-- ===== INTRO / ABOUT BRIEF — NEW SECTION ===== -->
+        <section id="intro" class="intro-section">
+            <div class="container intro-grid">
+                <div class="intro-content reveal">
+                    <span class="overline">Who We Are</span>
+                    <h2>We Build Technology<br>That Drives <span class="text-gradient-orange">Growth</span></h2>
+                    <p>At TEKROK INC, we specialize in delivering top-notch software development, web development, and
+                        IT support services tailored to meet your business needs and drive growth in the digital
+                        landscape.</p>
+                    <p>With over 15 years of experience and a team of 50+ engineers, we've helped 150+ businesses
+                        transform their operations through custom technology solutions.</p>
+                    <div class="intro-features">
+                        <div class="intro-feature">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>End-to-End Development</span>
                         </div>
-                        <h3>Custom Software</h3>
-                        <p>Tailored development aimed at your specific business requirements.</p>
-                    </article>
-
-                    <!-- Column 3: Image -->
-                    <div class="hero-card image-card"
-                        style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');">
-                        <div class="card-overlay"></div>
+                        <div class="intro-feature">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Agile Methodology</span>
+                        </div>
+                        <div class="intro-feature">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Dedicated Support</span>
+                        </div>
+                        <div class="intro-feature">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Enterprise Security</span>
+                        </div>
+                    </div>
+                    <a href="#services" class="text-link">Explore Our Services <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="intro-visual reveal delay-1">
+                    <div class="intro-image-main">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop"
+                            alt="TEKROK INC team collaborating on software solutions">
+                    </div>
+                    <div class="intro-stats-card reveal delay-2">
+                        <div class="intro-stat">
+                            <strong>150+</strong>
+                            <span>Projects Delivered</span>
+                        </div>
+                        <div class="intro-stat">
+                            <strong>99%</strong>
+                            <span>Client Satisfaction</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section (Alternating) -->
-        <section id="services" class="services-section" aria-labelledby="services-heading">
+        <!-- ===== SERVICES ===== -->
+        <section id="services" class="services-section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="overline">Our Expertise</span>
-                    <h2 id="services-heading">Comprehensive Solutions</h2>
+                    <span class="overline">What We Do</span>
+                    <h2>Our Core Expertise</h2>
+                    <p class="section-desc">End-to-end solutions that transform businesses and create lasting impact.
+                    </p>
                 </div>
 
-                <!-- Service Item 1 -->
                 <article class="service-row reveal">
                     <div class="service-content">
+                        <div class="service-number">01</div>
                         <h3>Web Development</h3>
-                        <p>Custom websites designed to enhance user experience and drive business growth effectively. We
-                            build responsive, high-performance sites using the latest technologies.</p>
-                        <a href="#contact" class="text-link">Learn More <i class="fa-solid fa-arrow-right"
-                                aria-hidden="true"></i></a>
+                        <p>Custom websites designed to enhance user experience and drive business growth. We build
+                            responsive, high-performance sites using the latest technologies.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Responsive Design</li>
+                            <li><i class="fa-solid fa-check"></i> SEO Optimization</li>
+                            <li><i class="fa-solid fa-check"></i> Performance Tuning</li>
+                        </ul>
+                        <a href="javascript:void(0)" class="text-link">Learn More <i
+                                class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="service-image">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
-                            alt="Professional Web Development Dashboard">
+                            alt="Web Development Dashboard" loading="lazy">
                     </div>
                 </article>
 
-                <!-- Service Item 2 -->
                 <article class="service-row reverse reveal">
                     <div class="service-content">
+                        <div class="service-number">02</div>
                         <h3>Software Development</h3>
                         <p>Robust and scalable software solutions tailored to your unique workflows. From enterprise
-                            resource planning to customer relationship management, we build it all.</p>
-                        <a href="#contact" class="text-link">Learn More <i class="fa-solid fa-arrow-right"
-                                aria-hidden="true"></i></a>
+                            resource planning to customer relationship management.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Custom ERP Systems</li>
+                            <li><i class="fa-solid fa-check"></i> Cloud-Native Architecture</li>
+                            <li><i class="fa-solid fa-check"></i> API Development</li>
+                        </ul>
+                        <a href="javascript:void(0)" class="text-link">Learn More <i
+                                class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="service-image">
                         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
-                            alt="Modern Software Coding Environment">
+                            alt="Software Coding" loading="lazy">
                     </div>
                 </article>
 
-                <!-- Service Item 3 -->
                 <article class="service-row reveal">
                     <div class="service-content">
+                        <div class="service-number">03</div>
+                        <h3>Artificial Intelligence</h3>
+                        <p>Harness the power of AI and machine learning to automate processes, gain insights, and create
+                            intelligent applications for your business.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Machine Learning</li>
+                            <li><i class="fa-solid fa-check"></i> NLP Solutions</li>
+                            <li><i class="fa-solid fa-check"></i> Computer Vision</li>
+                        </ul>
+                        <a href="javascript:void(0)" class="text-link">Learn More <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop"
+                            alt="AI Visualization" loading="lazy">
+                    </div>
+                </article>
+
+                <article class="service-row reverse reveal">
+                    <div class="service-content">
+                        <div class="service-number">04</div>
                         <h3>IT Support & Consulting</h3>
-                        <p>Effective IT support is crucial for maintaining efficient operations. We provide 24/7
-                            monitoring,
-                            security updates, and strategic consulting.</p>
-                        <a href="#contact" class="text-link">Learn More <i class="fa-solid fa-arrow-right"
-                                aria-hidden="true"></i></a>
+                        <p>24/7 monitoring, security updates, infrastructure management, and strategic consulting to
+                            keep your business running at peak performance.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> 24/7 Monitoring</li>
+                            <li><i class="fa-solid fa-check"></i> Cybersecurity</li>
+                            <li><i class="fa-solid fa-check"></i> Cloud Migration</li>
+                        </ul>
+                        <a href="javascript:void(0)" class="text-link">Learn More <i
+                                class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="service-image">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-                            alt="IT Data Monitoring and Analytics">
+                            alt="IT Analytics" loading="lazy">
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section bg-light" aria-labelledby="projects-heading">
+        <!-- ===== WHY US ===== -->
+        <section class="why-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="overline">Why TEKROK INC</span>
+                    <h2>Built Different. Built Better.</h2>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card reveal">
+                        <div class="why-icon"><i class="fa-solid fa-rocket"></i></div>
+                        <h4>Fast Delivery</h4>
+                        <p>Agile methodology ensures rapid development and on-time delivery.</p>
+                    </div>
+                    <div class="why-card reveal">
+                        <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h4>Secure & Reliable</h4>
+                        <p>Enterprise-grade security with continuous monitoring.</p>
+                    </div>
+                    <div class="why-card reveal">
+                        <div class="why-icon"><i class="fa-solid fa-users-gear"></i></div>
+                        <h4>Expert Team</h4>
+                        <p>50+ engineers experienced across every major stack.</p>
+                    </div>
+                    <div class="why-card reveal">
+                        <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+                        <h4>24/7 Support</h4>
+                        <p>Round-the-clock support so you never miss a beat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJECTS ===== -->
+        <section id="projects" class="projects-section">
             <div class="container">
                 <div class="section-header reveal">
                     <span class="overline">Portfolio</span>
-                    <h2 id="projects-heading">Recent Works</h2>
-                    <p>Explore our innovative projects showcasing cutting-edge expertise.</p>
+                    <h2>Recent Works</h2>
+                    <p class="section-desc">Innovative projects showcasing our cutting-edge expertise.</p>
                 </div>
-
-                <div class="projects-grid reveal">
-                    <!-- Project 1 -->
-                    <article class="project-card">
+                <div class="projects-grid">
+                    <article class="project-card reveal">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"
-                                alt="Financial Dashboard Interface">
+                                alt="Financial Dashboard" loading="lazy">
+                            <div class="project-overlay"><span class="project-tag">FinTech</span></div>
                         </div>
                         <div class="project-info">
                             <h4>FinTech Dashboard</h4>
                             <p>Financial Data Visualization</p>
                         </div>
                     </article>
-
-                    <!-- Project 2 -->
-                    <article class="project-card">
+                    <article class="project-card reveal">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-                                alt="HealthCare Streamlining App Interface">
+                                alt="Healthcare App" loading="lazy">
+                            <div class="project-overlay"><span class="project-tag">Healthcare</span></div>
                         </div>
                         <div class="project-info">
                             <h4>HealthStream App</h4>
-                            <p>Medical Records Management</p>
+                            <p>Patient Management System</p>
                         </div>
                     </article>
-
-                    <!-- Project 3 -->
-                    <article class="project-card">
+                    <article class="project-card reveal">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
-                                alt="Eco-friendly E-commerce Platform Interface">
+                                alt="E-commerce Platform" loading="lazy">
+                            <div class="project-overlay"><span class="project-tag">E-Commerce</span></div>
                         </div>
                         <div class="project-info">
-                            <h4>EcoCom E-commerce</h4>
-                            <p>Sustainable Shopping Platform</p>
+                            <h4>EcoCom Platform</h4>
+                            <p>Sustainable Shopping Solution</p>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Stats Section -->
-        <aside class="stats-section dark-bg" aria-label="Company Statistics">
+        <!-- ===== STATS ===== -->
+        <aside id="about" class="stats-section">
             <div class="container">
-                <div class="stats-grid reveal">
-                    <div class="stat-item">
+                <div class="stats-grid">
+                    <div class="stat-item reveal">
                         <h3>150+</h3>
                         <p>Projects Completed</p>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-item reveal">
                         <h3>15+</h3>
                         <p>Years Experience</p>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-item reveal">
                         <h3>50+</h3>
                         <p>Team Experts</p>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-item reveal">
                         <h3>100%</h3>
                         <p>Client Satisfaction</p>
                     </div>
@@ -231,81 +325,80 @@
             </div>
         </aside>
 
-        <!-- Testimonial Section -->
-        <section class="testimonial-section" aria-labelledby="testimonial-heading">
+        <!-- ===== TESTIMONIAL ===== -->
+        <section class="testimonial-section">
             <div class="container">
-                <h2 id="testimonial-heading" class="visually-hidden">Client Testimonials</h2>
+                <div class="section-header reveal">
+                    <span class="overline">Testimonials</span>
+                    <h2>What Our Clients Say</h2>
+                </div>
                 <div class="testimonial-content reveal">
-                    <div class="stars" aria-label="5 star rating">★★★★★</div>
-                    <blockquote>
-                        "Tekrok delivered exceptional software solutions that transformed our business operations.
-                        Highly
-                        recommend their services for anyone looking to scale!"
-                    </blockquote>
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"TEKROK INC delivered exceptional software solutions that transformed our business
+                        operations. Their team's expertise and dedication to quality is unmatched!"</blockquote>
                     <div class="client-info">
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop"
                             alt="Mary Ann - Director at TechCorp">
-                        <div>
-                            <strong>Mary Ann</strong>
-                            <span>Director, TechCorp</span>
-                        </div>
+                        <div><strong>Mary Ann</strong><span>Director, TechCorp</span></div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- ===== CTA ===== -->
+        <section class="cta-section">
+            <div class="container cta-content reveal">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Let's discuss how TEKROK INC can engineer your digital future.</p>
+                <a href="#contact" class="btn btn-cta-white">Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer id="contact" class="footer-section dark-bg">
+    <!-- ===== FOOTER ===== -->
+    <footer id="contact" class="footer-section">
         <div class="container">
-            <div class="footer-grid reveal">
-                <!-- Column 1: Brand -->
-                <div class="footer-col">
-                    <a href="index.html" class="footer-logo">Tekrok.</a>
-                    <p>Expert software solutions for your business needs. Building the future, one line of code at a
-                        time.</p>
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="javascript:void(0)" class="footer-logo">TEKROK INC<span class="highlight">.</span></a>
+                    <p>Expert software solutions for your business. Building the future, one line of code at a time.</p>
+                    <div class="social-links">
+                        <a href="javascript:void(0)" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="javascript:void(0)" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="javascript:void(0)" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="javascript:void(0)" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
                 </div>
-
-                <!-- Column 2: Links -->
-                <nav class="footer-col" aria-label="Footer Services Navigation">
+                <nav class="footer-col">
                     <h5>Services</h5>
                     <ul class="footer-links">
                         <li><a href="javascript:void(0)">Web Development</a></li>
                         <li><a href="javascript:void(0)">Software Engineering</a></li>
-                        <li><a href="javascript:void(0)">IT Consultancy</a></li>
                         <li><a href="javascript:void(0)">AI Solutions</a></li>
+                        <li><a href="javascript:void(0)">IT Consultancy</a></li>
                     </ul>
                 </nav>
-
-                <!-- Column 3: Contact -->
+                <nav class="footer-col">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="javascript:void(0)">About Us</a></li>
+                        <li><a href="javascript:void(0)">Careers</a></li>
+                        <li><a href="javascript:void(0)">Blog</a></li>
+                        <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                    </ul>
+                </nav>
                 <address class="footer-col">
                     <h5>Contact</h5>
                     <ul class="footer-links">
-                        <li>5 Independence Way, Princeton NJ</li>
-                        <li><a href="mailto:contact@tekrok.com">contact@tekrok.com</a></li>
-                        <li><a href="tel:+12015550123">+1 (201) 555-0123</a></li>
+                        <li><i class="fa-solid fa-location-dot"></i> 5 Independence Way, Princeton NJ</li>
+                        <li><a href="mailto:contact@tekrok.com"><i class="fa-solid fa-envelope"></i>
+                                contact@tekrok.com</a></li>
+                        <li><a href="tel:+12015550123"><i class="fa-solid fa-phone"></i> +1 (201) 555-0123</a></li>
                     </ul>
                 </address>
-
-                <!-- Column 4: Newsletter -->
-                <div class="footer-col">
-                    <h5>Newsletter</h5>
-                    <p>Subscribe for latest updates.</p>
-                    <form class="newsletter-form" aria-label="Subscribe to our newsletter">
-                        <input type="email" placeholder="Your email address" required aria-label="Email Address">
-                        <button type="submit" aria-label="Subscribe">→</button>
-                    </form>
-                </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2024 Tekrok Inc. All rights reserved.</p>
-                <nav class="social-links" aria-label="Social Media Links">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                </nav>
+                <p>&copy; 2024 TEKROK INC. All rights reserved.</p>
             </div>
         </div>
     </footer>
