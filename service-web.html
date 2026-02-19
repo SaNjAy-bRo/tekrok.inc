@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development — TEKROK INC</title>
+    <meta name="description"
+        content="Create stunning, high-performance websites and web applications with TEKROK INC. Responsive design, e-commerce, and custom web solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR (Static) ===== -->
+    <header class="navbar navbar-static" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" aria-label="TEKROK INC Home">
+                <svg class="logo-svg" viewBox="0 0 40 40" aria-hidden="true">
+                    <path d="M20 2L2 12V28L20 38L38 28V12L20 2Z" fill="currentColor" />
+                    <path d="M20 10V30M10 16L30 16" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+                </svg>
+                <span class="logo-text">TEKROK <span class="logo-inc">INC</span></span>
+            </a>
+
+            <nav class="nav-links" id="main-nav">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="services.html" class="active dropdown-trigger">
+                        Services <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="service-web.html" class="active"><i class="fa-solid fa-globe"></i> Web Development</a>
+                        <a href="service-software.html"><i class="fa-solid fa-laptop-code"></i> Software Development</a>
+                        <a href="service-ai.html"><i class="fa-solid fa-brain"></i> Artificial Intelligence</a>
+                        <a href="contact.html"><i class="fa-solid fa-headset"></i> IT Support</a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html" class="btn-nav-cta">Contact Us</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Mobile Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+
+    <main>
+        <!-- ===== HERO SECTION (Parallax) ===== -->
+        <section class="section"
+            style="padding-top: 180px; padding-bottom: 140px; background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1964&auto=format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed; color: white;">
+            <div class="container" style="text-align: center;">
+                <div class="reveal-up">
+                    <span class="overline"
+                        style="color: var(--color-primary); background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 50px; backdrop-filter: blur(5px);">Web
+                        Development</span>
+                    <h1 style="margin: 24px 0 24px; font-size: clamp(3rem, 6vw, 4.5rem); color: white;">Digital <span
+                            class="text-gradient-orange">Excellence</span></h1>
+                    <p class="section-desc"
+                        style="margin: 0 auto 40px auto; color: rgba(255,255,255,0.9); font-size: 1.2rem; max-width: 700px;">
+                        Crafting immersive, high-performance web experiences that captivate users and drive conversions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TECH BENEFITS ===== -->
+        <section class="section" style="background: white;">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center; gap: 80px;">
+                    <div class="reveal-up">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+                            alt="Web Design" style="width: 100%; border-radius: 24px; box-shadow: var(--shadow-xl);">
+                    </div>
+                    <div class="reveal-up delay-1">
+                        <h2 style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 24px;">Modern & Responsive<br>Web
+                            Experiences</h2>
+                        <p style="color: var(--color-text); margin-bottom: 24px; line-height: 1.8;">
+                            Your website is your digital storefront. We create visually stunning, user-centric designs
+                            that look perfect on every device.
+                        </p>
+                        <p style="color: var(--color-text); margin-bottom: 32px; line-height: 1.8;">
+                            From simple landing pages to complex web applications, we prioritize speed, accessibility,
+                            and SEO to ensure your brand stands out in the crowded digital landscape.
+                        </p>
+                        <a href="contact.html" class="btn btn-secondary">Start Your Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICES CARDS ===== -->
+        <section class="section" style="background: var(--color-bg-alt);">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Web Solutions</h2>
+                    <p class="section-desc">Tailored development services for your digital needs.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card reveal-up" style="border: none; box-shadow: var(--shadow-md);">
+                        <div
+                            style="height: 220px; overflow: hidden; border-radius: 12px 12px 0 0; margin: -24px -24px 20px -24px;">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop"
+                                alt="Responsive Design" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h4>Responsive Design</h4>
+                        <p>Fluid grids and flexible images ensure your content adapts gracefully to any screen size,
+                            enhancing mobile engagement.</p>
+                    </div>
+                    <div class="card reveal-up delay-1" style="border: none; box-shadow: var(--shadow-md);">
+                        <div
+                            style="height: 220px; overflow: hidden; border-radius: 12px 12px 0 0; margin: -24px -24px 20px -24px;">
+                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop"
+                                alt="E-Commerce" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h4>E-Commerce Solutions</h4>
+                        <p>Robust online stores with secure payment gateways, inventory management, and intuitive
+                            shopping experiences.</p>
+                    </div>
+                    <div class="card reveal-up delay-2" style="border: none; box-shadow: var(--shadow-md);">
+                        <div
+                            style="height: 220px; overflow: hidden; border-radius: 12px 12px 0 0; margin: -24px -24px 20px -24px;">
+                            <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?q=80&w=1968&auto=format&fit=crop"
+                                alt="PWA" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h4>Progressive Web Apps</h4>
+                        <p>App-like functionality in the browser. Offline access, push notifications, and fast loading
+                            speeds for superior retention.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHY US ===== -->
+        <section class="section" style="background: white;">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center; gap: 80px;">
+                    <div class="reveal-up">
+                        <span class="overline">Why Choose Us</span>
+                        <h2>Performance First</h2>
+                        <ul style="list-style: none; padding: 0; margin-top: 24px;">
+                            <li style="margin-bottom: 20px; display: flex; align-items: start; gap: 12px;">
+                                <i class="fa-solid fa-check-circle"
+                                    style="color: var(--color-primary); font-size: 1.2rem; margin-top: 2px;"></i>
+                                <span style="font-size: 1.05rem;"><strong>Speed Optimization:</strong> We write clean
+                                    code to ensure lightning-fast load times.</span>
+                            </li>
+                            <li style="margin-bottom: 20px; display: flex; align-items: start; gap: 12px;">
+                                <i class="fa-solid fa-check-circle"
+                                    style="color: var(--color-primary); font-size: 1.2rem; margin-top: 2px;"></i>
+                                <span style="font-size: 1.05rem;"><strong>SEO Best Practices:</strong> Built-in
+                                    technical SEO helps you rank higher on search engines.</span>
+                            </li>
+                            <li style="margin-bottom: 20px; display: flex; align-items: start; gap: 12px;">
+                                <i class="fa-solid fa-check-circle"
+                                    style="color: var(--color-primary); font-size: 1.2rem; margin-top: 2px;"></i>
+                                <span style="font-size: 1.05rem;"><strong>Security:</strong> We implement
+                                    industry-standard security measures to protect your data.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="reveal-up delay-1">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+                            alt="Collaborative Design"
+                            style="width: 100%; border-radius: 24px; box-shadow: var(--shadow-lg);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CLIENT REVIEW (New) ===== -->
+        <section class="section" style="background: var(--color-bg-alt); text-align: center;">
+            <div class="container reveal-up">
+                <i class="fa-solid fa-quote-left"
+                    style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: 24px;"></i>
+                <blockquote
+                    style="font-size: 1.5rem; font-style: italic; max-width: 800px; margin: 0 auto 32px; line-height: 1.6; color: var(--color-text-dark);">
+                    "Our new website traffic doubled thanks to the high-performance design TEKROK delivered. The user
+                    experience is flawless on every device."
+                </blockquote>
+                <div class="client-info"
+                    style="display: flex; align-items: center; justify-content: center; gap: 16px;">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=100&auto=format&fit=crop"
+                        alt="Mark Davies"
+                        style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; box-shadow: var(--shadow-sm);">
+                    <div style="text-align: left;">
+                        <strong style="display: block; color: var(--color-text-dark);">Mark Davies</strong>
+                        <span style="font-size: 0.9rem; color: var(--color-text);">CMO, RetailGlow</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA SECTION (Reused) ===== -->
+        <section class="section section-cta"
+            style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); color: white; text-align: center;">
+            <div class="container cta-content reveal">
+                <h2 style="color: white;">Let's Build Something Amazing</h2>
+                <p style="color: rgba(255,255,255,0.9);">Your vision, our technical expertise. Let's make it a reality.
+                </p>
+                <a href="contact.html" class="btn btn-cta-white">Get a Quote <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER (Reused) ===== -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="footer-logo">TEKROK INC<span class="highlight">.</span></a>
+                    <p>Expert software solutions for your business. Building the future, one line of code at a time.</p>
+                    <div class="social-links">
+                        <a href="javascript:void(0)" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="javascript:void(0)" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="javascript:void(0)" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="javascript:void(0)" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <nav class="footer-col">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="service-web.html">Web Development</a></li>
+                        <li><a href="service-software.html">Software Engineering</a></li>
+                        <li><a href="service-ai.html">AI Solutions</a></li>
+                        <li><a href="contact.html">IT Consultancy</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="javascript:void(0)">Blog</a></li>
+                        <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+                <address class="footer-col">
+                    <h5>Contact</h5>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-location-dot"></i> 5 Independence Way, Princeton NJ</li>
+                        <li><a href="mailto:contact@tekrok.com"><i class="fa-solid fa-envelope"></i>
+                                contact@tekrok.com</a></li>
+                        <li><a href="tel:+12015550123"><i class="fa-solid fa-phone"></i> +1 (201) 555-0123</a></li>
+                    </ul>
+                </address>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TEKROK INC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
